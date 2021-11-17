@@ -3,8 +3,8 @@ import menuCards from './menuCards.hbs';
 import menu from './menu.json';
 
 const Theme = {
-    LIGHT: 'light-theme',
-    DARK: 'dark-theme',
+  LIGHT: 'light-theme',
+  DARK: 'dark-theme',
 };
 
 const bodyRef = document.querySelector('body');
@@ -13,13 +13,13 @@ const menuCardsRef = document.querySelector('.menu');
 menuCardsRef.insertAdjacentHTML('beforeend', menuCards(menu));
 
 if (localStorage.getItem('theme') === 'dark') {
-    bodyRef.classList.toggle(`${Theme.DARK}`);
-    themeSwitcherCheckboxRef.checked = true;
+  bodyRef.classList.toggle(`${Theme.DARK}`);
+  themeSwitcherCheckboxRef.checked = true;
 }
 
 themeSwitcherCheckboxRef.addEventListener('change', () => {
-    bodyRef.classList.toggle(`${Theme.DARK}`);
-    themeSwitcherCheckboxRef.checked
-        ? localStorage.setItem('theme', 'dark')
-        : localStorage.setItem('theme', 'light');
+  bodyRef.classList.toggle(`${Theme.DARK}`);
+  themeSwitcherCheckboxRef.checked
+    ? localStorage.setItem('theme', 'dark')
+    : localStorage.setItem('theme', 'light');
 });
